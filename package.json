@@ -1,0 +1,50 @@
+{
+  "name": "bikemechanicapp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/App.ts",
+  "scripts": {
+    "test": "docker-compose down && echo \"Starting postgres docker instances\" && docker-compose up -d && NODE_ENV=test npx jest --verbose --runInBand --detectOpenHandles",
+    "dev": "webpack && ts-node ./src/Server.ts",
+    "serve": "docker-compose down && echo \"Starting postgres docker instances\" && docker-compose up -d && echo \"Starting server\" && nodemon -e ts,tsx,json --exec npm run dev"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@fastify/static": "^5.0.2",
+    "@fontsource/roboto": "^4.5.7",
+    "@mui/material": "^5.8.0",
+    "fastify": "^3.29.0",
+    "fastify-esso": "^1.2.4",
+    "pg": "^8.7.3",
+    "process": "^0.11.10",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
+    "showdown": "^2.1.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^17.0.33",
+    "@types/react": "^18.0.9",
+    "@types/react-router-dom": "^5.3.3",
+    "babel-loader": "^8.2.5",
+    "dotenv": "^16.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.0",
+    "jest-environment-node": "^28.1.0",
+    "knex": "^2.0.0",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.2",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  }
+}
