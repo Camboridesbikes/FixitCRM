@@ -3,6 +3,7 @@ CREATE TABLE clients (
     client_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE,
     phone_number INT,
+    client_address VARCHAR(255),
     created TIMESTAMP NOT NULL
 );
 
@@ -29,7 +30,7 @@ CREATE TABLE reports(
     service_date TIMESTAMP,
     body TEXT,
     viewable BOOLEAN DEFAULT FALSE,
-    report_status INT DEFAULT 0
+    report_status INT DEFAULT 0,
     created TIMESTAMP NOT NULL,
     last_updated TIMESTAMP NOT NULL
 );
@@ -39,8 +40,8 @@ CREATE TABLE users(
     username VARCHAR(50) UNIQUE NOT NULL,
     pass VARCHAR(50) NOT NULL,
     user_name VARCHAR(255) NOT NULL,
-    user_role INT DEFAULT NOT NULL 0  
+    user_role INT DEFAULT 0  
 );
 
-INSERT INTO users (username, pass, user_name, user_role)
+INSERT INTO users (username, pass, user_name)
     VALUES ('Cambo', 'pass', 'Cameron');

@@ -5,11 +5,10 @@ services:
     environment: 
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: test_data
+      POSTGRES_DB: test_db
     container_name: testdb_postgres
     ports:
-      - '5454:5432'
-    volumes: 
+      - '8000:5432'
+    volumes:
       - /tmp:/tmp
       - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
-  
