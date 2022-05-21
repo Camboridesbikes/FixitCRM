@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
-const webpack = require('webpack')
+const webpack = require('webpack');
 
 module.exports = {
     mode: "development",
@@ -9,6 +10,7 @@ module.exports = {
         filename: "main.js",
         path: path.resolve(__dirname, "public"),
         clean: true,
+        assetModuleFilename: 'assets/[hash][ext]'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -17,6 +19,10 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'process.env': JSON.stringify(process.env)
+         }),
+         new MiniCssExtractPlugin({
+             filename: '[name].[contenthash].css',
+             chunkFilename: '[id].css'
          })
     ],
     devtool: "inline-source-map",
@@ -30,6 +36,52 @@ module.exports = {
         },
     module: {
         rules: [
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i, 
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/[hash][ext]'
+                },
+                use: 'svgo-loader'
+            },
+            {
+                test: /\.module.(scss|css)$/,
+                use: [
+                    process.env.NODE_ENV !== 'production'
+                        ? 'style-loader'
+                        : MiniCssExtractPlugin.loader,
+                    'css-modules-typescript-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                ]
+            },
+            {
+                test: /\.(scss|css)$/,
+                exclude: /\.module.(s(a|c)ss)$/,
+                use: [
+                    process.env.NODE_ENV !== 'production'
+                        ? 'style-loader'
+                        : MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.m?[jt]sx$/,
                 exclude: /(node_modules|bower_components)/,

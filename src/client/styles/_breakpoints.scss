@@ -1,0 +1,35 @@
+//anything smaller caught by the rest of css
+$screen-sm-min: 481px; //tablet
+$screen-md-min: 769px; //small screen or laptop
+$screen-lg-min: 1025px; //desktop or large screen
+$screen-xl-min: 1201px; //very large screen or tv
+
+@mixin sm {
+    @media screen and (min-width: #{$screen-sm-min}){
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (min-width: #{$screen-md-min}){
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (min-width: #{$screen-lg-min}){
+        @content;
+    }
+}
+
+@mixin xl {
+    @media screen and (min-width: #{$screen-xl-min}){
+        @content;
+    }
+}
+
+@mixin rw($screen) {
+    @media screen and (min-width: $screen){
+        @content;
+    }
+}

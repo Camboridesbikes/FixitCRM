@@ -1,18 +1,10 @@
 import React from 'react'
 import {createRoot} from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
-import CssBaseline from '@mui/material/CssBaseline';
+import './Styles/globals.scss';
 
 import Admin from './Pages/Admin';
-
-
-
-
-const App = () : JSX.Element => {
-    return (
-        <h1>Hello World</h1>
-    );
-}
+import Home from "./Pages/Home";
 
 const NotFound = () : JSX.Element => {
     return (
@@ -27,11 +19,10 @@ if(rootElement != null){
 
     root.render(
         <>
-        <CssBaseline enableColorScheme/>
         <Router>
             <Routes>   
                 <Route path='*' element={<NotFound/>}/>         
-                <Route path="/" element={<App/>}>                                       
+                <Route path="/" element={<Home/>}>                                       
                 </Route>   
                 <Route path='/login' element={<span>login</span>}/>
                 <Route path='/admin' element={<Admin/>}>

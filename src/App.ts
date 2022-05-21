@@ -61,6 +61,13 @@ server.setNotFoundHandler(async (req, res) => {
 })
 
 server.register(async openRoutes => {
+    openRoutes.get('/logo', async (req, res) => {
+
+        await res.code(200)
+            .type('image/svg+xml')
+            .sendFile(__dirname, `../public/Images/logo.svg`)
+    })
+
     openRoutes.register(require('./routes/webPortal'), {prefix: '/web-portal'})
 
     openRoutes.register(require('./routes/api/clients'), {prefix: '/api/clients'});

@@ -1,0 +1,64 @@
+@use '../breakpoints.scss' as *;
+
+.contentContainer{
+    width: 55%;
+    align-self: center;
+}
+
+.bookingButton{
+    width: 65%;
+    height: 4em;
+    background-color: #E3B448;
+    border: none;
+    border-radius: 2em;
+    padding: 0 6.81%;
+    margin: .618em;
+    /* color: white; */
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    overflow: hidden;    
+    color: #3A6B35;
+    transition-duration: .5s;
+}
+
+.bookingButton:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@include sm(){
+    .contentContainer{
+        width: 100%;
+    }
+    .bookingButton{
+        width: 90%;
+    }
+}
+
+@include md(){
+    .contentContainer{
+        width: 70%;
+    }
+    .bookingButton{
+        width: 70%;
+    }
+}
+
+@include lg(){
+    .contentContainer{
+        width: 55%;
+    }
+    .bookingButton{
+        width: 65%;
+    }
+}
+
+@include xl(){
+    .contentContainer{
+        width: 45%;
+    }
+    .bookingButton{
+        width: 50%;
+    }
+}
