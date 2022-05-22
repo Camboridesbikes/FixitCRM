@@ -3,13 +3,12 @@ module.exports = {
         client: 'pg',
         connection: {
             host: '127.0.0.1',
-            port: 5432,
+            port: 5454,
             user: 'postgres',
             password: 'postgres',
             database: 'postgres'
         }
-    }
-    ,
+    },
     test: {
         client: 'pg',
         connection: {
@@ -30,5 +29,4 @@ module.exports = {
             database: process.env.DB_NAME
         }
     }
-}
-    
+};

@@ -1,7 +1,7 @@
 import React from 'react'
 import {createRoot} from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
-import './Styles/globals.scss';
+import './styles/globals.scss';
 
 import Admin from './Pages/Admin';
 import Home from "./Pages/Home";
