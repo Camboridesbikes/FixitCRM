@@ -1,12 +1,12 @@
 @use '../breakpoints.scss' as *;
 
 .contentContainer{
-    width: 55%;
+    width: 100%;
     align-self: center;
 }
 
 .bookingButton{
-    width: 65%;
+    width: 90%;
     height: 4em;
     background-color: #E3B448;
     border: none;
