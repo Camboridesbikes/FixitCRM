@@ -1,6 +1,6 @@
-# Fixit Mobile Mechanic CRM
+# Fixit CRM - for moblile bike mechanics
 
-## Get started
+## <u>Get started</u>
 ### Development
 1. run `npm ci && npm serve`
 ### Production
@@ -9,7 +9,7 @@
 
 2. Run with: ` (sudo) docker-compose up`
 
-## TODO List
+## <u>TODO List</u>
 
 - [x] **Build Home page** - basically online business card that funnels folks to my velotooler page
 - [x] **Host site on server** --> www.fixmyvelo.com
@@ -27,5 +27,7 @@
   - [ ]  md editor
   - [ ]  publish button
   - [ ]  autosave
+- [ ]  **Build Report display page** (front end)
+  - [ ]  link on router
 - [ ]  **Build Login Page**
 - [ ]  **Authentication**

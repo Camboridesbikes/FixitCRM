@@ -24,7 +24,7 @@ class Home extends React.Component{
                 </a>
                 <div style={{marginTop: "1.8em"}}>                    
                     <h3>cameron@fixmyvelo.com</h3>
-                    <h3>(206) 886-1097</h3>
+                    <h3>(971) 666-5094</h3>
                 </div>
             </div>            
         </div>

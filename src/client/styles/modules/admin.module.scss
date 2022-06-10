@@ -1,0 +1,20 @@
+@use '../breakpoints.scss' as *;
+
+div.Admin{
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+div.NavPanel{
+    background-color: #3A6B35;
+    height: 100%;
+    width: 10%;
+}
+
+div.AdminBody{
+    width: 90%;
+    height: 100%;
+}
